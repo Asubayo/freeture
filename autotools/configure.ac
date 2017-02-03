@@ -32,7 +32,7 @@ define([AC_CACHE_LOAD],)
 define([AC_CACHE_SAVE],)
 
 AC_PREREQ([2.69])
-AC_INIT([freeture], [1.0-5], [yoan.audureau@u-psud.fr])
+AC_INIT([freeture], [2.0], [yoan.audureau@u-psud.fr])
 AC_CONFIG_SRCDIR([../src/main.cpp])
 AC_CONFIG_HEADERS([config.h])
 
@@ -102,10 +102,10 @@ PKG_CHECK_MODULES([GOBJ_2_0], [gobject-2.0], [LIBS="$GOBJ_2_0_LIBS $LIBS"]
 PKG_CHECK_MODULES([UDEV], [libudev], [LIBS="$UDEV_LIBS $LIBS"]
 				      [AM_CPPFLAGS="$AM_CPPFLAGS $UDEV_CFLAGS"],
 				      [AC_MSG_ERROR([$UDEV_ERROR Exiting.])])
-PKG_CHECK_MODULES(CRYPTO, libcrypto, [LIBS="$CRYPTO_LIBS $LIBS"]
+PKG_CHECK_MODULES([CRYPTO], [libcrypto], [LIBS="$CRYPTO_LIBS $LIBS"]
 				      [AM_CPPFLAGS="$AM_CPPFLAGS $CRYPTO_CFLAGS"],
 				      [AC_MSG_ERROR([$CRYPTO_ERROR Exiting.])])
-PKG_CHECK_MODULES(V4L2, libv4l2, [LIBS="$V4L2_LIBS $LIBS"]
+PKG_CHECK_MODULES([V4L2], [libv4l2], [LIBS="$V4L2_LIBS $LIBS"]
 				      [AM_CPPFLAGS="$AM_CPPFLAGS $V4L2_CFLAGS"],
 				      [AC_MSG_ERROR([$V4L2_ERROR Exiting.])])
 
